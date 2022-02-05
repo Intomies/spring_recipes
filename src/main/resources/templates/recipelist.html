@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<title>Recipe List</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<body>
+
+	<nav style="background-color: gray; padding: 0px 5px 0px 5px;">
+		<a href="/" class="btn btn-success">Back to Index</a>		
+		<div style="float: right;">
+		</div>
+	</nav>
+
+	<div class="col-md-4" style="padding: 5px">
+		<h3 th:inline="text">You are logged in</h3>
+	</div>
+	
+
+	<h1 style="padding: 5px">Recipes</h1>
+	<table class="table table-striped">
+		<tr>
+			<th>Id</th>
+			<th>Name</th>
+		</tr>
+
+		<tr th:each="recipe : ${recipes}">
+			<td>id</td>
+			<td th:text="${recipe.recipeName}">name</td>
+		</tr>
+	</table>
+
+</body>
+</html>
